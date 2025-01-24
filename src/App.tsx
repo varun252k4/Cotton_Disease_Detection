@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Leaf } from 'lucide-react';
 import { Prediction } from './components/Prediction';
+import { Signup } from './components/Signup';
 
 const features = [
   {
@@ -105,6 +106,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detect" element={<Prediction />} />
+        <Route path="/signin" element={<Signup/>} />
       </Routes>
     </Router>
   );
