@@ -40,7 +40,7 @@ const FormInput: React.FC<FormInputProps> = ({
               <TextAnimate animation="blurInUp" by="text">
                 {lab}
               </TextAnimate>
-            </FormLabel> 
+            </FormLabel>
           </div>
           <FormControl className="w-full mr-10">
             <Input

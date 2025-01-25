@@ -89,6 +89,7 @@ const Fert_Recommedations = () => {
                 placeholder="What is the Crop Type"
                 control={form.control}
               />
+              
               <FormInput
                 name="soil_type"
                 lab="Soil Type"

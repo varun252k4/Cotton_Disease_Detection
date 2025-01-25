@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, MotionProps, Variants } from "motion/react";
 import { ElementType } from "react";
 
+
 type AnimationType = "text" | "word" | "character" | "line";
 type AnimationVariant =
   | "fadeIn"
@@ -374,7 +375,7 @@ export function TextAnimate({
             custom={i * staggerTimings[by]}
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
-              segmentClassName,
+              segmentClassName
             )}
           >
             {segment}
