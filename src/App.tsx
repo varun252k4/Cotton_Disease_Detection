@@ -1,9 +1,12 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Leaf } from 'lucide-react';
 import { Prediction } from './components/Prediction';
-import { Signup } from './components/Signup';
+import { InteractiveHoverButton } from './components/ui/interactive-hover-button';
+import Crop_Recommedations from './components/Crop_Recommendations';
+import Fert_Recommedations from './components/Fert_Recommedations';
+// import { Signup } from './components/Signup';
 
 const features = [
   {
@@ -52,7 +55,6 @@ function HomePage() {
             Protect your cotton crops with advanced AI technology. Get instant disease detection
             and expert recommendations to keep your harvest healthy.
           </motion.p>
-
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -65,6 +67,26 @@ function HomePage() {
               Start Detection
             </Link>
           </motion.div>
+            <div className='flex justify-center'>
+              <div className='mr-4 mt-8'>
+              <InteractiveHoverButton>
+                <Link
+                  to="/crop_recommedation"
+                >
+                Crop Recommendation
+                </Link> 
+              </InteractiveHoverButton>
+              </div>
+            <div className='mt-8 ml-4'>
+            <InteractiveHoverButton>
+            <Link to="/fert_recommendation"> 
+            Fertilizer Recommendations
+            </Link>
+          </InteractiveHoverButton>
+            </div>
+          
+            </div>
+
         </div>
 
         <motion.div
@@ -93,7 +115,7 @@ function HomePage() {
           transition={{ delay: 0.8 }}
           className="text-center text-gray-600 mt-16"
         >
-          <p>Trusted by farmers worldwide • 99% accuracy • Instant results</p>
+          <p>Trusted by farmers worldwide • 90% accuracy • Instant results</p>
         </motion.div>
       </div>
     </div>
@@ -106,7 +128,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detect" element={<Prediction />} />
-        <Route path="/signin" element={<Signup/>} />
+        <Route path="/crop_recommedation" element={<Crop_Recommedations/>}></Route>
+        <Route path="/fert_recommendation" element={<Fert_Recommedations/>}/>
       </Routes>
     </Router>
   );

@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import { Upload, Loader2, AlertCircle, CheckCircle2, Image as ImageIcon, RefreshCcw, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
+// import { Button } from './ui/button';
 
 const diseases = {
   Aphids: {
