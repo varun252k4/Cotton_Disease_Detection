@@ -1,26 +1,28 @@
 // import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Leaf } from 'lucide-react';
-import { Prediction } from './components/Prediction';
-import { InteractiveHoverButton } from './components/ui/interactive-hover-button';
-import Crop_Recommedations from './components/Crop_Recommendations';
-import Fert_Recommedations from './components/Fert_Recommedations';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Leaf } from "lucide-react";
+import { Prediction } from "./components/Prediction";
+import { InteractiveHoverButton } from "./components/ui/interactive-hover-button";
+import Crop_Recommedations from "./components/Crop_Recommendations";
+import Fert_Recommedations from "./components/Fert_Recommedations";
 // import { Signup } from './components/Signup';
 
 const features = [
   {
-    title: 'Advanced Detection',
-    description: 'State-of-the-art AI model trained on thousands of cotton plant images'
+    title: "Advanced Detection",
+    description:
+      "State-of-the-art AI model trained on thousands of cotton plant images",
   },
   {
-    title: 'Real-time Analysis',
-    description: 'Get instant results and recommendations for your cotton crops'
+    title: "Real-time Analysis",
+    description:
+      "Get instant results and recommendations for your cotton crops",
   },
   {
-    title: 'Expert Insights',
-    description: 'Receive detailed analysis and treatment recommendations'
-  }
+    title: "Expert Insights",
+    description: "Receive detailed analysis and treatment recommendations",
+  },
 ];
 
 function HomePage() {
@@ -36,7 +38,7 @@ function HomePage() {
           >
             <Leaf className="h-20 w-20 text-green-600" />
           </motion.div>
-          
+
           <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -45,15 +47,16 @@ function HomePage() {
           >
             Cotton Disease Detection
           </motion.h1>
-          
+
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
             className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Protect your cotton crops with advanced AI technology. Get instant disease detection
-            and expert recommendations to keep your harvest healthy.
+            Protect your cotton crops with advanced AI technology. Get instant
+            disease detection and expert recommendations to keep your harvest
+            healthy.
           </motion.p>
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -67,26 +70,20 @@ function HomePage() {
               Start Detection
             </Link>
           </motion.div>
-            <div className='flex justify-center'>
-              <div className='mr-4 mt-8'>
+          <div className="flex justify-center">
+            <div className="mr-4 mt-8">
               <InteractiveHoverButton>
-                <Link
-                  to="/crop_recommedation"
-                >
-                Crop Recommendation
-                </Link> 
+                <Link to="/crop_recommedation">Crop Recommendation</Link>
               </InteractiveHoverButton>
-              </div>
-            <div className='mt-8 ml-4'>
-            <InteractiveHoverButton>
-            <Link to="/fert_recommendation"> 
-            Fertilizer Recommendations
-            </Link>
-          </InteractiveHoverButton>
             </div>
-          
+            <div className="mt-8 ml-4">
+              <InteractiveHoverButton>
+                <Link to="/fert_recommendation">
+                  Fertilizer Recommendations
+                </Link>
+              </InteractiveHoverButton>
             </div>
-
+          </div>
         </div>
 
         <motion.div
@@ -103,7 +100,9 @@ function HomePage() {
               transition={{ delay: 0.6 + index * 0.1 }}
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                {feature.title}
+              </h3>
               <p className="text-gray-600">{feature.description}</p>
             </motion.div>
           ))}
@@ -128,8 +127,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detect" element={<Prediction />} />
-        <Route path="/crop_recommedation" element={<Crop_Recommedations/>}></Route>
-        <Route path="/fert_recommendation" element={<Fert_Recommedations/>}/>
+        <Route
+          path="/crop_recommedation"
+          element={<Crop_Recommedations />}
+        ></Route>
+        <Route path="/fert_recommendation" element={<Fert_Recommedations />} />
       </Routes>
     </Router>
   );

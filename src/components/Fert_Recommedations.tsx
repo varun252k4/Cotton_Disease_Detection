@@ -7,6 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "./FormInput";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const formSchema = z.object({
   temperature: z.string().nonempty("Temperature must be non-negative"),
@@ -51,18 +53,30 @@ const Fert_Recommedations = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
       <div className="flex flex-col items-center text-center">
-        <div className="text-4xl font-semibold text-gray-800 mb-6">
-          <TextAnimate animation="blurInUp" by="text">
-            Fertilizer Recommendation
-          </TextAnimate>
+        <div className="flex flex-row">
+          <Link
+            to="/"
+            className="inline-flex items-center text-green-600 hover:text-green-700 mb-8 transition-colors"
+          >
+            <ArrowLeft className="h-5 w-5 mr-2" />
+            Back to Home
+          </Link>
         </div>
-        <div className="text-lg text-gray-700 mb-6">
-          <TextAnimate animation="blurInUp" by="text">
-            Optimize crop growth with tailored fertilizer recommendations for
-            healthier yields and sustainable farming.
-          </TextAnimate>
+        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-sm shadow">
+          <div className="text-4xl font-semibold text-gray-800 mb-4 mt-4 text-white">
+            <TextAnimate animation="blurInUp" by="text">
+              Fertilizer Recommendation
+            </TextAnimate>
+          </div>
+          <div className="text-lg text-gray-700 mb-6 text-white p-2">
+            <TextAnimate animation="blurInUp" by="text">
+              Optimize crop growth with tailored fertilizer recommendations for
+              healthier yields and sustainable farming.
+            </TextAnimate>
+          </div>
         </div>
-        <div className="border w-full p-4 rounded-xl shadow">
+
+        <div className="border w-full p-4 rounded-md shadow-2xl">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormInput
@@ -89,7 +103,7 @@ const Fert_Recommedations = () => {
                 placeholder="What is the Crop Type"
                 control={form.control}
               />
-              
+
               <FormInput
                 name="soil_type"
                 lab="Soil Type"
