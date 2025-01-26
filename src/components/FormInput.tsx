@@ -6,7 +6,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { TextAnimate } from "./ui/text-animate";
 
 type FormInputProps = {
   name:
@@ -17,7 +16,10 @@ type FormInputProps = {
     | "crop_type"
     | "nitrogen"
     | "potassium"
-    | "phosphorous";
+    | "phosphorous"
+    | "ph"
+    | "phosphorus"
+    | "rainfall";
   lab: string;
   placeholder: string;
   control: any; // Pass control from react-hook-form
@@ -37,9 +39,8 @@ const FormInput: React.FC<FormInputProps> = ({
         <FormItem className="flex items-center justify-center mt-4">
           <div className="flex flex-col items-center text-center">
             <FormLabel className="text-md font-semibold mr-10 ml-10">
-              <TextAnimate animation="blurInUp" by="text">
-                {lab}
-              </TextAnimate>
+              {/* <TextAnimate animation="blurInUp" by="text"> */}
+              {lab}
             </FormLabel>
           </div>
           <FormControl className="w-full mr-10">
