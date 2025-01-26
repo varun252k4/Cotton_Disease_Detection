@@ -3,3 +3,6 @@ uvicorn
 tensorflow
 pillow
 numpy
+joblib
+pydantic
+python-multiparts
