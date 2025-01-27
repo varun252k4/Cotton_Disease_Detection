@@ -65,8 +65,7 @@ class_names = [
     "green_cotton_boll",
     "healthy",  
     "powdery_mildew",
-    "target_spot"
-    
+    "target_spot"    
 ]
 
 def preprocess_image(image_data: bytes) -> np.ndarray:

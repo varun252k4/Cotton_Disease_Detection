@@ -38,7 +38,7 @@ const FormInput: React.FC<FormInputProps> = ({
       render={({ field }) => (
         <FormItem className="flex items-center justify-center mt-4">
           <div className="flex flex-col items-center text-center">
-            <FormLabel className="text-md font-semibold mr-10 ml-10">
+            <FormLabel className="text-md font-semibold mr-10 ml-10 w-full">
               {/* <TextAnimate animation="blurInUp" by="text"> */}
               {lab}
             </FormLabel>
